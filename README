@@ -1,0 +1,211 @@
+#Vision
+  Humanity functioning together as a coherent Animal.
+  The cells of the Animal coordinate via a process, along the lines of:
+    (1) Write a record of your consumption and production.
+          (i.e. a personal statement,
+                a vote,
+                an advertisement,
+                a specification,
+                a summary,
+                a directory tree of bookmarked social media posts,
+                a relic, or
+                a history)
+    (2) Browse the records and connect with the people you resonate with.
+          (e.g. connect two people with different skills and similar interests,
+                        a reader and a writer,
+                        a student and a teacher,
+                        a buyer and a seller,
+                        a producer and a consumer,
+                        a driver and a passenger,
+                        a driver and a dispatcher,
+                        a society and its government, or
+                        a society and its dependents))
+
+#Mission
+  My mission is to make (2) easier by improving the quality of the records produced in (1).
+  It's a classic "sort the data structure to make it more easily searchable" problem!
+    (e.g. If I invest in a good system for sorting my laundry,
+          then I will have an easier time searching for my socks)
+
+#Arrows
+  Anything that has a URL, we call a "resource".
+  Given a URL, the Internet will return the corresponding resource.
+
+  We can place the URL of one resource into another resource;
+    call this an embedded URL.
+
+  An "arrow" is a resource that is accessible not just by 1 URL;
+  we maintain 3 indexes, so that an arrow has 3 URLs
+    (a source URL,
+     an identifying URL,
+     a target URL),
+  by which it is accessible.
+  An arrow is similar to an RDF triple, or to a row in a SQL join table.
+
+  Define a node as any arrow that starts and ends at itself.
+    (i.e. the arrow has all 3 of its URLs identical)
+  Define a link as any arrow that starts at one node and ends at another.
+
+  How does an embedded URL link its source node to its target node?
+
+  How does an arrow link its source node to its target node?
+
+  How do the two differ?
+    Each arrow is a third resource that sits outside of the source and target resources;
+    I can adjust the arrow without adjusting the source or target;
+    I can detect the arrow from both source or target.
+
+    An embedded URL is a property of the source node;
+    you can't detect it from the target, and
+    you have to modify the source node to modify the linkage.
+
+  Let G be a directed graph of (nodes, links).
+  Notice the following properties of G:
+    (1) A user can modify the links between two nodes without modifying either node.
+    (2) Given a URL, a user can retrieve the identified node,
+                                         as well as the links pointed into and out of that node,
+                                thus attaining the URLs of all adjacent nodes.
+
+  If we imagine the World Wide Web to be a directed graph G' of (nodes, embedded URLs),
+    then the directedness of these "links" in G' expresses deficiency in (1) and (2).
+
+  In G, the directedness of links can be used to express ordering of nodes,
+    (e.g. ordering nodes from general to special, or
+                              prior to posterior)
+
+#DOT
+  Let everyone format his record as a DAG Ordered Tree (DOT).
+  The DOT is a modular record, organized nicely for Rosetta Stoning.
+
+  A DOT is a directed graph G of (nodes, links), such that
+    (1) G reduces to a DAG, if you treat cycles as equivalence groups of a single node;
+    (2) all links in G have a numerical index maintained w.r.t. the links from the same source;
+    (3) at any time there exists a tree T in G, such that
+      (3.1) the links in T are labeled "primary", and
+      (3.2) T fully covers the nodes in G.
+
+  Imagine desktop icons, structured with arrows.
+  Each icon can be expanded in place to show its detail.
+  Dragging an icon moves the entire subtree rooted at that icon, and
+  the subtree at some icon can be hidden, or it can be
+  retracted into indented outline format, and expanded out again.
+  Select an icon, and set its outward arrows as primary...
+
+  The tree T of a DOT G is interpreted as a radix tree
+    (i.e. T is a tree that is interpreted as a Venn diagram,
+               a tree of generic features extended by specific features,
+               a trie)
+
+    The radix tree is a feature-centric distribution of information
+      (e.g. Venn flowcharts
+            Javascript's prototype-based inheritance)
+
+    Contrast it with a container-centric distribution of information;
+      (e.g. sets of sets
+            nested folders with files
+            C's class-based inheritance)
+
+    Notice that we can convert between the two models.
+    Let's call this "Duality of common features and containers":
+      f_X is in x <=> x is in c_X.
+
+    A radix tree is like the result of the following steps:
+      (1) smear your objects out into paths (like in an electrophoresis, or other spectroscopy),
+      (2) deduplicate common features,
+          collapsing them into single instances and using arrows to mark out the paths.
+
+    If we compare radix tree to the tree of nested folders with files, notice that
+                          it is differentiable and integrable along the links.
+
+  The order of a DOT exists firstly in the directedness of its links.
+    (i.e. each node has a depth in the tree)
+  The DOT is ordered further in the labeling of each link with
+    a numerical index, maintained alongside the other links extending from the same source.
+  Thus, we can define deterministic DFS and BFS on the nodes.
+
+  The DAG structure of the DOT exists because each specific can extend from multiple generics.
+    (i.e. an object might fit two categories at once)
+  We maintain a tree within the DAG to determine a primary position for each node.
+
+  DOTs need not be in 1-to-1 relationship with people.
+  DOTs are just one mode of expressing an integral of nodes into a composite item denoted by its root.
+
+  A link of a DOT is similar to an RDF triple whose predicate says
+    "Extend (plus metadata for ordering, timestamps, signatures)"
+
+  For a demo of DOT mechanics, watch
+    https://www.youtube.com/watch?v=SGGaHjXpnG0
+
+  To play around with the prototype DOT browser
+    http://mindscape.io
+
+#POD
+  Sum all our DOTs to form a Pyramid Of Demography (POD).
+  Ideally, the DOTs of multiple people will intersect on many of the same nodes,
+    and we can aggegate the links between pairs of nodes.
+
+  The POD browser is a DOT builder;
+  nodes are displayed in composition with one another (DOTs),
+    and they'll have styles (like CSS) to this end
+
+  Imagine clicking an icon reveals a profile of the nodes adjacent to it,
+  along with the aggregated arrows going in and out.
+  The service will provide the ability to filter and sort nodes
+    (e.g. by membership of the author on a friends-list,
+             number of links,
+             amount of money attached, and/or
+             date of the latest update)
+
+  The text content of an node can be used as its human URL
+    (the UX level URL of an item is just its text)
+    (like the pre-typing to get an emoji pulled up that you can open)
+    (every query should have its own node).
+
+  Automate enzymes that take nodes with similar content and bring them together in your view
+    (by creating that link for you; also fancy ux animation)
+
+  If we each can create links between nodes,
+  then we each have the means to advertise/promote.
+
+  If can detect backlinks,
+  then we can break open the echo chambers and information silos of the Web.
+
+  URLs will continue to be useful.
+  A URL is like a word with an explicit definition.
+
+
+#God
+  The concept of God will serve as the origin of our coordinate system;
+                                   the apex of our pyramid;
+                                   the root of our directory tree.
+  God is defined as a triple
+    (the Spirit,
+     the Father,
+     the Son).
+
+  The Spirit is the Logos; the Word.
+    It is the Way of the Universe;
+      the way that humans model truth into experience and experience into language.
+    We call it the Spirit to remind us that it is mildly personal in nature.
+    The Spirit is the root node of the POD.
+
+  The Father is the creator of the observable universe.
+    If a creation is an extension of its creator,
+      then the Father extends into this Observable Universe.
+    The Father is not the whole of the Universe,
+      just the higher and higher degrees of Logos within it.
+    Contrast this with chaos, whose domain is heat, the high entropy form into which things seem to dissolve.
+    The Father is the root node of the Scientific extension of the POD.
+
+  The Son is Jesus Christ.
+    He is the prime example of what a man should do with liberty.
+    He leads by example, teaching us
+      (1) to love God,
+      (2) to love your neighbor as you love yourself, and
+      (3) the necessity and sufficiency of sacrifice.
+    The Son is the root node of the Moral extension of the POD.
+
+  I also like to define God as all that is good, lumped into one concept, given personality.
+
+  I would like to use the "state" to refer to state as in physics and computer science.
+    Let's use society where we use "the state" (of society).
