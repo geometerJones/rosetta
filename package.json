@@ -1,0 +1,19 @@
+{
+  "name": "pod",
+  "version": "1.0.0",
+  "description": "a modern Rosetta Stone",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geometerJones/rosetta.git"
+  },
+  "author": "Peter Wei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geometerJones/rosetta/issues"
+  },
+  "homepage": "https://github.com/geometerJones/rosetta#readme"
+}

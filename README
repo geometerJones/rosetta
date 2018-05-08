@@ -142,7 +142,7 @@
 #POD
   Sum all our DOTs to form a Pyramid Of Demography (POD).
   Ideally, the DOTs of multiple people will intersect on many of the same nodes,
-    and we can aggegate the links between pairs of nodes.
+    and we can aggregate the links between pairs of nodes.
 
   The POD browser is a DOT builder;
   nodes are displayed in composition with one another (DOTs),
